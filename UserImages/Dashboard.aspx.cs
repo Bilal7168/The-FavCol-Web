@@ -18,5 +18,15 @@ namespace UserImages
         {
             Response.Redirect("Chat.aspx");
         }
+
+        protected void imagesdash_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Images.aspx");
+        }
+
+        protected void logout_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LoginPage.aspx");
+        }
     }
 }

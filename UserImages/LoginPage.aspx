@@ -21,6 +21,24 @@
             <asp:Button ID="signin" runat="server" Text="Login" CssClass="button" OnClick="signin_Click" />
             <a href="SignUpPage.aspx" class="href2">Create Account</a>
         </div>
+        <script>
+            window.addEventListener('DOMContentLoaded', () => {
+                
+            })
+
+            if (document.getElementById("username").textContent == "") {
+                document.getElementById("username").style.borderColor = "Green";
+            }
+            else {
+                document.getElementById("username").style.borderColor = "Black";
+            }
+            if (document.getElementById("password").textContent == "") {
+                document.getElementById("password").style.borderColor = "Red";
+            }
+            else {
+                document.getElementById("password").style.borderColor = "Black";
+            }        
+        </script>
     </form>
 </body>
 </html>

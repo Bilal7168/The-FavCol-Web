@@ -23,5 +23,15 @@ namespace UserImages
         {
             Response.Redirect("Images.aspx");
         }
+
+        protected void profile_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Dashboard.aspx");
+        }
+
+        protected void logout_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LoginPage.aspx");
+        }
     }
 }

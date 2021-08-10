@@ -17,9 +17,9 @@
         <i id="ico2" runat="server" class="bi-messenger" style="font-size:70px; position:absolute; margin-top:340px; margin-left:-120px; color:#961c1c;"></i> 
         <asp:Button ID="message" runat="server" Text="Chat" CssClass="buttondashboard" style="margin-top:410px;" OnClick="message_Click" />
         <i id="ico3" runat="server" class="bi-image" style="font-size:70px; position:absolute; margin-top:500px; margin-left:-120px; color:#961c1c;"></i>
-        <asp:Button ID="Images" runat="server" Text="Images" CssClass="buttondashboard" style="margin-top:570px;" />
+        <asp:Button ID="imagesdash" runat="server" Text="Images" CssClass="buttondashboard" style="margin-top:570px;" onClick="imagesdash_Click" />
         <asp:Label ID="Label1" runat="server" Text="" class="label2"></asp:Label>
-        <asp:Button ID="logout"  runat="server" CssClass="logout"></asp:Button>
+        <asp:Button ID="logout"  runat="server" CssClass="logout" OnClick="logout_Click"></asp:Button>
         <asp:Label ID="verticallog" runat="server" Text="" CssClass="vllog"></asp:Label>
         <asp:Label ID="wlcmdialog" runat="server" Text="Welcome, Mr. John Elia" CssClass="welcomedialog"></asp:Label>
         <asp:Label ID="containdash" runat="server" Text="Profile" style="    position: absolute; margin-top: -43px; margin-left: 30px; color: #3309c4; font-weight: bold; font-size: large;font-family: 'Palatino Linotype';"></asp:Label>

@@ -37,13 +37,13 @@
     <form id="frgtpass" method="post" style="height:700px; width:1200px; border-width:0px;" runat="server">
         <asp:Label ID="lab" runat="server" Text="" class="label"></asp:Label>
         <i id="ico1" runat="server" class="bi-person-badge" style="font-size:70px; position:absolute; margin-top:170px; margin-left:-120px; color:#961c1c;"></i> 
-        <asp:Button ID="profile" runat="server" Text="Profile" CssClass="buttondashboard" style="margin-top:250px;" />
+        <asp:Button ID="profile" runat="server" Text="Profile" CssClass="buttondashboard" style="margin-top:250px;" OnClick="profile_Click" />
         <i id="ico2" runat="server" class="bi-messenger" style="font-size:70px; position:absolute; margin-top:340px; margin-left:-120px; color:#961c1c;"></i> 
         <asp:Button ID="message" runat="server" Text="Chat" CssClass="buttondashboard" style="margin-top:420px;" OnClick="message_Click" />
         <i id="ico3" runat="server" class="bi-image" style="font-size:70px; position:absolute; margin-top:500px; margin-left:-120px; color:#961c1c;"></i>
         <asp:Button ID="images" runat="server" Text="Images" CssClass="buttondashboard" style="margin-top:580px;" OnClick="images_Click" />
         <asp:Label ID="Label1" runat="server" Text="" class="label2"></asp:Label>
-        <asp:Button ID="logout"  runat="server" CssClass="logout"></asp:Button>
+        <asp:Button ID="logout"  runat="server" CssClass="logout" OnClick="logout_Click"></asp:Button>
         <asp:Label ID="verticallog" runat="server" Text="" CssClass="vllog"></asp:Label>
         <asp:Label ID="wlcmdialog" runat="server" Text="Welcome, Mr. John Elia" CssClass="welcomedialog"></asp:Label>
         <asp:Label ID="containdash" runat="server" Text="Todays' Pictures" style="    position: absolute; margin-top: -43px; margin-left: 30px; color: #3309c4; font-weight: bold; font-size: large;font-family: 'Palatino Linotype';"></asp:Label>
