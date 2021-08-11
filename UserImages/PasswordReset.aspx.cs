@@ -13,5 +13,13 @@ namespace UserImages
         {
 
         }
+
+        protected void reset_Click(object sender, EventArgs e)
+        {
+            if(password1.Text != "" && password2.Text != "" && password1.Text == password2.Text && password1.Text.Length >= 8)
+            {
+                Response.Redirect("LoginPage.aspx");
+            }
+        }
     }
 }

@@ -13,5 +13,13 @@ namespace UserImages
         {
 
         }
+
+        protected void signup_Click(object sender, EventArgs e)
+        {
+            if(fname.Text != "" && lname.Text != "" && emailaddr.Text != "" && uname.Text != "" && pass.Text != "" && confrmpass.Text != "" && pass.Text == confrmpass.Text && pass.Text.Length >= 8)
+            {
+                Response.Redirect("LoginPage.aspx");
+            }
+        }
     }
 }

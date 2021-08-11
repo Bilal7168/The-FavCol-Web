@@ -14,9 +14,10 @@
             <h2><span class="h2_p1">Fav</span><span class="h2_p2">Col</span></h2>
             <h3>Sign In</h3>   
             <br />
-            <asp:TextBox ID="username" runat="server" placeholder="UserName"></asp:TextBox>
-            <asp:TextBox ID="password" placeholder="Password" TextMode="Password"  runat="server" style="margin-top:10px;"></asp:TextBox>
+            <asp:TextBox ID="username" runat="server" CssClass="input" placeholder="UserName"></asp:TextBox>
+            <asp:TextBox ID="password" placeholder="Password" TextMode="Password"   runat="server" CssClass="input" style="margin-top:10px;"></asp:TextBox>
             <br />
+            <span id="error"></span>
             <a href="ForgotPass.aspx" class="href">Forgot Password?</a>
             <asp:Button ID="signin" runat="server" Text="Login" CssClass="button" OnClick="signin_Click" />
             <a href="SignUpPage.aspx" class="href2">Create Account</a>
@@ -25,19 +26,26 @@
             window.addEventListener('DOMContentLoaded', () => {
                 
             })
+            const button = document.querySelector(".button");
+            let textone = document.getElementsByClassName("input");
+            var error = document.getElementById("error");
+            window.addEventListener("click", () => {
+                for (i = 0; i < 2; i++) {
+                    if (textone[i].value.length == 0) {
+                        textone[i].style.borderColor = "Red";
+                        textone[i].style.borderWidth = "3.7px";
+                        error.style.position = "absolute";
+                        error.textContent = "* Some Fields are empty";
+                        error.style.fontSize = "4px;";
+                        error.style.color = "Red";
+                    }
+                    else {
+                        textone[i].style = "input"; textone[1].style.marginTop = "10px";
+                        error.textContent = "";
+                    }
+                }
+            });
 
-            if (document.getElementById("username").textContent == "") {
-                document.getElementById("username").style.borderColor = "Green";
-            }
-            else {
-                document.getElementById("username").style.borderColor = "Black";
-            }
-            if (document.getElementById("password").textContent == "") {
-                document.getElementById("password").style.borderColor = "Red";
-            }
-            else {
-                document.getElementById("password").style.borderColor = "Black";
-            }        
         </script>
     </form>
 </body>

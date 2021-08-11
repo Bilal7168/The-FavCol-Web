@@ -17,7 +17,27 @@
             <asp:TextBox ID="keyreceived" TextMode="Number" runat="server"></asp:TextBox>
             <br />
             <asp:Button ID="toreset" runat="server" Text="Proceed" CssClass="button" OnClick="toreset_Click" />
+            <span id="error"></span>
         </div>
     </form>
+    <script>
+        let x = document.getElementById("keyreceived");
+        let but = document.getElementById("toreset");
+        let error = document.getElementById("error");
+        window.addEventListener("click", () => {
+            if (x.value.length == 0) {
+                x.style.borderWidth = "4px";
+                x.style.borderColor = "Red";
+                error.style.position = "absolute";
+                error.style.marginLeft = "-343px";
+                error.textContent = "* Field is empty";
+                error.style.color = "Red";
+            }
+            else {
+                x.style = "input";
+                error.textContent = "";
+            }
+        })
+    </script>
 </body>
 </html>

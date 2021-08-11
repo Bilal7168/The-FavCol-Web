@@ -20,7 +20,10 @@ namespace UserImages
         }
         protected void Send_Click(object sender, EventArgs e)
         {
-            Response.Redirect(url: "ValidateKey.aspx");
+            if (username.Text != "")
+            {
+                Response.Redirect(url: "ValidateKey.aspx");
+            }
         }
     }
 }

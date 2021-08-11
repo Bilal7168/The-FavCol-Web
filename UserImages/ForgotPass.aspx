@@ -17,7 +17,27 @@
             <asp:TextBox ID="username" runat="server" placeholder="UserName" OnTextChanged="username_TextChanged"></asp:TextBox>
             <br />
             <asp:Button ID="Send" runat="server" Text="Send Key to Email" CssClass="button" OnClick="Send_Click" />
+            <span id="error"></span>
         </div>
     </form>
+    <script>
+        let x = document.getElementById("username");
+        let button = document.getElementById("Send");
+        let error = document.getElementById("error");
+        window.addEventListener("click", () => {
+            if (x.value.length == 0) {
+                x.style.borderWidth = "4px";
+                x.style.borderColor = "Red";
+                error.style.position = "absolute";
+                error.style.marginLeft = "-343px";
+                error.textContent = "* Field is empty";
+                error.style.color = "Red";
+            }
+            else {
+                x.style = "input";
+                error.textContent = "";
+            }
+        })
+    </script>
 </body>
 </html>

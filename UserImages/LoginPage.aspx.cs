@@ -16,7 +16,10 @@ namespace UserImages
 
         protected void signin_Click(object sender, EventArgs e)
         {
-            Response.Redirect(url: "Dashboard.aspx");
+            if (username.Text != "" && password.Text != "")
+            {
+                Response.Redirect(url: "Dashboard.aspx");
+            }
         }
     }
 }

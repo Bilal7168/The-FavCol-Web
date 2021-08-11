@@ -16,7 +16,10 @@ namespace UserImages
 
         protected void toreset_Click(object sender, EventArgs e)
         {
-            Response.Redirect(url: "PasswordReset.aspx");
+            if (keyreceived.Text != "")
+            {
+                Response.Redirect(url: "PasswordReset.aspx");
+            }
         }
     }
 }
