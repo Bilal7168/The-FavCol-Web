@@ -17,6 +17,7 @@
             <asp:TextBox ID="username" runat="server" CssClass="input" placeholder="UserName"></asp:TextBox>
             <asp:TextBox ID="password" placeholder="Password" TextMode="Password"   runat="server" CssClass="input" style="margin-top:10px;"></asp:TextBox>
             <br />
+            <asp:Label ID ="unamewarn" runat="server" Visible="false" style="text-align:left; color:red; float:left; margin-left:34px; "></asp:Label>
             <span id="error"></span>
             <a href="ForgotPass.aspx" class="href">Forgot Password?</a>
             <asp:Button ID="signin" runat="server" Text="Login" CssClass="button" OnClick="signin_Click" />

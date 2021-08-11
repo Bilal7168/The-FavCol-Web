@@ -17,6 +17,7 @@
             <asp:TextBox ID="lname" placeholder="Last Name" runat="server" CssClass="input" style="margin-top:10px;"></asp:TextBox>
             <asp:TextBox ID="emailaddr" placeholder="Email Address" runat="server" CssClass="input" style="margin-top:10px;"></asp:TextBox>
             <asp:TextBox ID="uname" placeholder="User Name" runat="server" CssClass="input" style="margin-top:10px;"></asp:TextBox>
+            <asp:Label ID ="unamewarn" runat="server" Visible="false" style="text-align:left; color:red; float:left; margin-left:34px; "></asp:Label>
             <asp:TextBox ID="pass" placeholder="Password" TextMode="Password" runat="server" CssClass="input" style="margin-top:10px;"></asp:TextBox>
             <asp:TextBox ID="confrmpass" placeholder="Confirm Password" TextMode="Password" runat="server" CssClass="input" style="margin-top:10px;"></asp:TextBox>
             <br />
