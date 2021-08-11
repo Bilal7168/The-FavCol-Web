@@ -29,9 +29,10 @@
             <asp:textBox  runat="server" textMode="color" class="span3" value="#041a6c" style="width:300px; height:300px; border-width:10px; margin-top:80px; margin-right:550px;" id="cp2" data-color-format="rgba" />
             <asp:Label ID="colorchoose" runat="server" Text="Pick Favorite color from above" style="position:absolute; margin-top:440px; margin-left:-845px; font-size:21px; font-weight:bold; color:black; font-family:'Palatino Linotype'"></asp:Label>
             <i class="bi-arrow-90deg-up" style="position:absolute; font-size:17px; color:black; margin-top:440px; margin-left:-865px;" ></i>
-            <asp:TextBox runat="server" style="position:absolute; margin-left:-353px; margin-top:120px;"></asp:TextBox>
+            <asp:TextBox ID ="favwordy" runat="server" style="position:absolute; margin-left:-353px; margin-top:120px;"></asp:TextBox>
             <asp:Label ID="favword" runat="server" Text="Write your favorite word below" style="position:absolute; margin-top:70px; margin-left:-320px; font-size:21px; font-weight:bold; color:black; font-family:'Palatino Linotype'"></asp:Label>
             <i class="bi-arrow-90deg-down" style="position:absolute; font-size:17px; color:black; margin-top:80px; margin-left:-339px;" ></i>
+            <span id="error"></span>
             <asp:TextBox runat="server" style="position:absolute; margin-left:-353px; margin-top:220px;"></asp:TextBox>
             <asp:Label ID="emailaddrmodif" runat="server" Text="Modify Email Address" style="position:absolute; margin-top:280px; margin-left:-230px; font-size:21px; font-weight:bold; color:black; font-family:'Palatino Linotype'"></asp:Label>
             <i class="bi-arrow-90deg-up" style="position:absolute; font-size:17px; color:black; margin-top:280px; margin-left:-252px;" ></i>
@@ -39,5 +40,27 @@
             <asp:Label ID="vllog2" runat="server" style="position:absolute; height:578px; margin-left:-460px; margin-top:0px;" Text="" CssClass="vllog"></asp:Label>
         </div>
     </form>
+    <script>
+        let textone = document.getElementById("favwordy");
+        let errors = document.getElementById("error");
+        window.addEventListener("click", () => {
+            if (textone.value.length == 0) {
+                textone.style.borderColor = "Red";
+                textone.style.borderWidth = "6px";
+                errors.style.position = "absolute";
+                errors.style.marginTop = "180px";
+                errors.style.marginLeft = "-353px";
+                errors.textContent = "*Favorite Word is a Must";
+                errors.style.color = "Red";
+            }
+            else {
+                textone.style = "input";
+                textone.style.position = "absolute";
+                textone.style.marginLeft = "-353px";
+                textone.style.marginTop = "120px";
+                errors.textContent = "";
+            }
+        })
+    </script>
 </body>
 </html>
