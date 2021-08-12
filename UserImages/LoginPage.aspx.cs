@@ -13,37 +13,33 @@ namespace UserImages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            DAL x = new DAL();
+            x.helperDestroyKey();
         }
 
         protected void signin_Click(object sender, EventArgs e)
         {
             if (username.Text != "" && password.Text != "")
             {
-                SqlConnection conn = new SqlConnection("Data Source=DESKTOP-9LIFDV6;Initial Catalog=FavColDb;Integrated Security=True");
-                conn.Open();
-                string command = "select * from Login where Username = '" + username.Text + "' ";
-                SqlCommand soc = new SqlCommand(command, conn);
-                SqlDataReader extracter = soc.ExecuteReader();
-                if(!extracter.HasRows)
+                DAL x = new DAL();
+                int num = x.loginMethod(username.Text, password.Text);
+                switch (num)
                 {
-                    unamewarn.Text = "* User doesnt Exist";
-                    unamewarn.Visible = true;
-                }
-                else
-                {
-                    command = "select Password from Login where Username='" + username.Text + "'";
-                    soc = new SqlCommand(command, conn);
-                    extracter.Read();
-                    if(extracter.GetString(1) == password.Text)
-                    {
-                        Response.Redirect(url: "Dashboard.aspx");
-                    }
-                    else
-                    {
+                    case 0:
+                        unamewarn.Text = "* User doesnt Exist";
+                        unamewarn.Visible = true;
+                        break;
+                    case 1:
                         unamewarn.Text = "*Incorrect Password";
                         unamewarn.Visible = true;
-                    }
+                        break;
+                    case 2:
+                        unamewarn.Text = "Login Success..";
+                        unamewarn.Attributes.Add("style", "color:green");
+                        unamewarn.Visible = true;
+                        load.Visible = true;
+                        ScriptManager.RegisterClientScriptBlock(this, typeof(Page), "redirectJS", "setTimeout(function() { window.location.replace('Dashboard.aspx') }, 10000);", true);
+                        break;
                 }
                 
             }

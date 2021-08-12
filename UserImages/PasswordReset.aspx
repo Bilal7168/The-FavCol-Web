@@ -6,6 +6,7 @@
 <head runat="server">
     <title>FavCol - Password Reset</title>
     <link rel="stylesheet" href="CSS/InitialPageForms.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body style="background-image:linear-gradient(to right, dodgerblue, red)">
     <form id="passrst" method="post" style="height:400px;" runat="server">
@@ -16,6 +17,8 @@
             <asp:TextBox ID="password1" placeholder="Password" TextMode="Password"  runat="server"></asp:TextBox>
             <asp:TextBox ID="password2" placeholder="Confirm Password" TextMode="Password"  runat="server" style="margin-top:10px;"></asp:TextBox>
             <br />
+            <span id="load" class="spinner-border text-success spinner-border-sm" runat="server" visible="false"></span>
+            <asp:Label ID ="unamewarn" runat="server" Visible="false" style="text-align:left; color:red; float:left; margin-left:34px; "></asp:Label>
             <span id="error" ></span>
             <asp:Button ID="reset" runat="server" Text="Reset" CssClass="button" OnClick="reset_Click" />
             <a href="LoginPage.aspx" class="href2">Back to Login!</a>

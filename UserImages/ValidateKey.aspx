@@ -16,6 +16,7 @@
             <h4 style="margin-right:160px; color:#635e5e">Enter the key to proceed:</h4>
             <asp:TextBox ID="keyreceived" TextMode="Number" runat="server"></asp:TextBox>
             <br />
+            <asp:Label ID ="unamewarn" runat="server" Visible="false" style="text-align:left; color:red; float:left; margin-left:34px; "></asp:Label>
             <asp:Button ID="toreset" runat="server" Text="Proceed" CssClass="button" OnClick="toreset_Click" />
             <span id="error"></span>
         </div>

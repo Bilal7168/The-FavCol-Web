@@ -18,7 +18,18 @@ namespace UserImages
         {
             if (keyreceived.Text != "")
             {
-                Response.Redirect(url: "PasswordReset.aspx");
+                DAL x = new DAL();
+                if (x.checkValid(Convert.ToInt32(keyreceived.Text)))
+                {
+                    Response.Redirect(url: "PasswordReset.aspx");
+                }
+                else
+                {
+                    keyreceived.BorderColor = System.Drawing.Color.Red;
+                    unamewarn.Text = "Invalid key";
+                    unamewarn.Visible = true;
+                }
+
             }
         }
     }

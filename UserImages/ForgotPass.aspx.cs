@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Net;
+using System.Net.Mail;
+using System.Net.Mime;
 using System.Web.UI.WebControls;
 
 namespace UserImages
@@ -22,6 +25,8 @@ namespace UserImages
         {
             if (username.Text != "")
             {
+                DAL x = new DAL();
+                x.mailSend(username.Text);
                 Response.Redirect(url: "ValidateKey.aspx");
             }
         }

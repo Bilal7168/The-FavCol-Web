@@ -18,7 +18,13 @@ namespace UserImages
         {
             if(password1.Text != "" && password2.Text != "" && password1.Text == password2.Text && password1.Text.Length >= 8)
             {
-                Response.Redirect("LoginPage.aspx");
+                DAL x = new DAL();
+                x.changePass(password1.Text);
+                unamewarn.Text = "Password Reset SuccessFul..";
+                unamewarn.Attributes.Add("style", "color:green");
+                unamewarn.Visible = true;
+                load.Visible = true;
+                ScriptManager.RegisterClientScriptBlock(this, typeof(Page), "redirectJS", "setTimeout(function() { window.location.replace('LoginPage.aspx') }, 10000);", true);
             }
         }
     }
