@@ -38,7 +38,8 @@ namespace UserImages
                         unamewarn.Attributes.Add("style", "color:green");
                         unamewarn.Visible = true;
                         load.Visible = true;
-                        ScriptManager.RegisterClientScriptBlock(this, typeof(Page), "redirectJS", "setTimeout(function() { window.location.replace('Dashboard.aspx') }, 10000);", true);
+                        GlobalVar.user = username.Text;
+                        ScriptManager.RegisterClientScriptBlock(this, typeof(Page), "redirectJS", "setTimeout(function() { window.location.replace('Dashboard.aspx') }, 5000);", true);
                         break;
                 }
                 

@@ -11,6 +11,10 @@ namespace UserImages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            wlcmdialog.Text = "" + GlobalVar.user + "";
+            wlcmdialog.Attributes.Add("style", "float:right; margin-right:90px; margin-top:-40px; font-weight:bold; font-size:18px; color:midnightblue");
+            DAL x = new DAL();
+            mail.Text = x.getEmail();
 
         }
 

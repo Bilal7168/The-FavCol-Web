@@ -89,14 +89,14 @@ namespace UserImages
             int key = randomNumber();
 
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
-            smtpClient.Credentials = new System.Net.NetworkCredential("qsee716@gmail.com", "programnofap");
+            smtpClient.Credentials = new System.Net.NetworkCredential("FromEmail", "FromEmailPass");
             // smtpClient.UseDefaultCredentials = true; // uncomment if you don't want to use the network credentials
             smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
             smtpClient.EnableSsl = true;
             MailMessage mail = new MailMessage();
 
             //Setting From , To and CC
-            mail.From = new MailAddress("qsee716@gmail.com");
+            mail.From = new MailAddress("FromEmail");
             mail.To.Add(new MailAddress(extractor.GetString(0)));
             mail.Subject = "Password Reset Req : Validation Key";
             mail.Body = "Enter the following Key to validate: '" + key + "'";
@@ -150,6 +150,35 @@ namespace UserImages
             SqlCommand soc = new SqlCommand(command, conn);
             soc.ExecuteNonQuery();
             conn.Close();
+        }
+
+        public string getEmail()
+        {
+            string command = "Select Email from BioData where Username = '" + GlobalVar.user +"'";
+            conn.Open();
+            SqlCommand soc = new SqlCommand(command, conn);
+            SqlDataReader sd = soc.ExecuteReader();
+            sd.Read();
+            return sd.GetString(0);
+        }
+
+        public void ProfileInsertMethod(string color, string word, string emailaddr)
+        {
+            string command = "Select * from Choices where Username = '" + GlobalVar.user + "'";
+            SqlCommand soc = new SqlCommand(command, conn);
+            SqlDataReader sd = soc.ExecuteReader();
+            if (sd.HasRows)
+            {
+                //use the update statements here
+            }
+            else
+            {
+                //use the insert statements here
+                sd.Close();
+                command = "insert into Choices(Username, Color, Word) values('" + GlobalVar.user + "', '" + color + "', '" + word + "')";
+                soc = new SqlCommand(command, conn);
+
+            }
         }
 
     }

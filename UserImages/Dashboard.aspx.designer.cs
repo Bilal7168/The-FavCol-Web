@@ -186,6 +186,15 @@ namespace UserImages
         protected global::System.Web.UI.WebControls.Label favword;
 
         /// <summary>
+        /// mail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox mail;
+
+        /// <summary>
         /// emailaddrmodif control.
         /// </summary>
         /// <remarks>

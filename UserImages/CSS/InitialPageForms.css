@@ -201,9 +201,6 @@ input {
 }
 
 .welcomedialog {
-    position: absolute;
-    margin-top: -43px;
-    margin-left: 730px;
     color: #3309c4;
     font-weight:bold;
     font-size:large;

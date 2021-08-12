@@ -21,7 +21,7 @@
         <asp:Label ID="Label1" runat="server" Text="" class="label2"></asp:Label>
         <asp:Button ID="logout"  runat="server" CssClass="logout" OnClick="logout_Click"></asp:Button>
         <asp:Label ID="verticallog" runat="server" Text="" CssClass="vllog"></asp:Label>
-        <asp:Label ID="wlcmdialog" runat="server" Text="Welcome, Mr. John Elia" CssClass="welcomedialog"></asp:Label>
+        <asp:Label ID="wlcmdialog" runat="server" Text="Welcome, Mr. John Elia"></asp:Label>
         <asp:Label ID="containdash" runat="server" Text="Profile" style="    position: absolute; margin-top: -43px; margin-left: 30px; color: #3309c4; font-weight: bold; font-size: large;font-family: 'Palatino Linotype';"></asp:Label>
         <asp:Label ID="logo" runat="server" Text="Fav" style="font-size:xx-large; font-weight:bold; position:absolute; margin-top:-43px; margin-left:-136px; color:#041a6c;"></asp:Label>
         <asp:Label ID="logo2" runat="server" Text="Col" style="font-size:xx-large; font-weight:bold; position:absolute; margin-top:-43px; margin-left:-86px; color:#7e0505;"></asp:Label>
@@ -33,7 +33,7 @@
             <asp:Label ID="favword" runat="server" Text="Write your favorite word below" style="position:absolute; margin-top:70px; margin-left:-320px; font-size:21px; font-weight:bold; color:black; font-family:'Palatino Linotype'"></asp:Label>
             <i class="bi-arrow-90deg-down" style="position:absolute; font-size:17px; color:black; margin-top:80px; margin-left:-339px;" ></i>
             <span id="error"></span>
-            <asp:TextBox runat="server" style="position:absolute; margin-left:-353px; margin-top:220px;"></asp:TextBox>
+            <asp:TextBox ID="mail" runat="server" style="position:absolute; margin-left:-353px; margin-top:220px;"></asp:TextBox>
             <asp:Label ID="emailaddrmodif" runat="server" Text="Modify Email Address" style="position:absolute; margin-top:280px; margin-left:-230px; font-size:21px; font-weight:bold; color:black; font-family:'Palatino Linotype'"></asp:Label>
             <i class="bi-arrow-90deg-up" style="position:absolute; font-size:17px; color:black; margin-top:280px; margin-left:-252px;" ></i>
             <asp:Button ID="save" runat="server" Text="Save" style="position:absolute; margin-top:424px; margin-left:-353px;" CssClass="button" />
