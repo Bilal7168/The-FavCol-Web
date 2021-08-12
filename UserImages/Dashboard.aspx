@@ -26,23 +26,30 @@
         <asp:Label ID="logo" runat="server" Text="Fav" style="font-size:xx-large; font-weight:bold; position:absolute; margin-top:-43px; margin-left:-136px; color:#041a6c;"></asp:Label>
         <asp:Label ID="logo2" runat="server" Text="Col" style="font-size:xx-large; font-weight:bold; position:absolute; margin-top:-43px; margin-left:-86px; color:#7e0505;"></asp:Label>
         <div class="imgcontainer">
-            <asp:textBox  runat="server" textMode="color" class="span3" value="#041a6c" style="width:300px; height:300px; border-width:10px; margin-top:80px; margin-right:550px;" id="cp2" data-color-format="rgba" />
+            <asp:textBox runat="server" textMode="color" class="span3" value="#041a6c" style="width:300px; height:300px; border-width:10px; margin-top:80px; margin-right:550px;" id="cp2" data-color-format="rgba" />
             <asp:Label ID="colorchoose" runat="server" Text="Pick Favorite color from above" style="position:absolute; margin-top:440px; margin-left:-845px; font-size:21px; font-weight:bold; color:black; font-family:'Palatino Linotype'"></asp:Label>
             <i class="bi-arrow-90deg-up" style="position:absolute; font-size:17px; color:black; margin-top:440px; margin-left:-865px;" ></i>
-            <asp:TextBox ID ="favwordy" runat="server" style="position:absolute; margin-left:-353px; margin-top:120px;"></asp:TextBox>
+            <asp:TextBox ID ="favwordy" runat="server" style="position:absolute; margin-left:-353px; margin-top:120px;"  OnTextChanged="favwordy_Click"></asp:TextBox>
             <asp:Label ID="favword" runat="server" Text="Write your favorite word below" style="position:absolute; margin-top:70px; margin-left:-320px; font-size:21px; font-weight:bold; color:black; font-family:'Palatino Linotype'"></asp:Label>
             <i class="bi-arrow-90deg-down" style="position:absolute; font-size:17px; color:black; margin-top:80px; margin-left:-339px;" ></i>
             <span id="error"></span>
             <asp:TextBox ID="mail" runat="server" style="position:absolute; margin-left:-353px; margin-top:220px;"></asp:TextBox>
             <asp:Label ID="emailaddrmodif" runat="server" Text="Modify Email Address" style="position:absolute; margin-top:280px; margin-left:-230px; font-size:21px; font-weight:bold; color:black; font-family:'Palatino Linotype'"></asp:Label>
             <i class="bi-arrow-90deg-up" style="position:absolute; font-size:17px; color:black; margin-top:280px; margin-left:-252px;" ></i>
-            <asp:Button ID="save" runat="server" Text="Save" style="position:absolute; margin-top:424px; margin-left:-353px;" CssClass="button" />
+            <label id ="unamewarn" style="text-align:left; color:red; position:absolute; margin-left:-350px; margin-top:400px; color:green; visibility:visible;"></label>
+            <asp:Button ID="save" runat="server" Text="Save" style="position:absolute; margin-top:424px; margin-left:-353px;" CssClass="button" OnClick="save_Click" />
             <asp:Label ID="vllog2" runat="server" style="position:absolute; height:578px; margin-left:-460px; margin-top:0px;" Text="" CssClass="vllog"></asp:Label>
         </div>
     </form>
     <script>
         let textone = document.getElementById("favwordy");
         let errors = document.getElementById("error");
+        let closer = document.getElementById("unamewarn");
+        let saver = document.getElementById("save");
+
+        function Warn() {
+            closer.style.visibility = "hidden";
+        }
         window.addEventListener("click", () => {
             if (textone.value.length == 0) {
                 textone.style.borderColor = "Red";
@@ -60,6 +67,11 @@
                 textone.style.marginTop = "120px";
                 errors.textContent = "";
             }
+        })
+        saver.addEventListener("click", () => {
+            closer.textContent = "Successful Set!"
+            closer.style.visibility = "visible";
+            setTimeout(Warn, 5000);
         })
     </script>
 </body>

@@ -36,7 +36,7 @@
         <asp:Label ID="Label1" runat="server" Text="" class="label2"></asp:Label>
         <asp:Button ID="logout"  runat="server" CssClass="logout" OnClick="logout_Click"></asp:Button>
         <asp:Label ID="verticallog" runat="server" Text="" CssClass="vllog"></asp:Label>
-        <asp:Label ID="wlcmdialog" runat="server" Text="Welcome, Mr. John Elia" CssClass="welcomedialog"></asp:Label>
+        <asp:Label ID="wlcmdialog" runat="server" Text="Welcome, Mr. John Elia"></asp:Label>
         <asp:Label ID="containdash" runat="server" Text="Messenger" style="    position: absolute; margin-top: -43px; margin-left: 30px; color: #3309c4; font-weight: bold; font-size: large;font-family: 'Palatino Linotype';"></asp:Label>
         <asp:Label ID="logo" runat="server" Text="Fav" style="font-size:xx-large; font-weight:bold; position:absolute; margin-top:-43px; margin-left:-136px; color:#041a6c;"></asp:Label>
         <asp:Label ID="logo2" runat="server" Text="Col" style="font-size:xx-large; font-weight:bold; position:absolute; margin-top:-43px; margin-left:-86px; color:#7e0505;"></asp:Label>

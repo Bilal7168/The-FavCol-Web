@@ -92,7 +92,6 @@ C:\Users\Bilal Shahid\Source\Repos\Bilal7168\The-FavCol-Web\UserImages\bin\rosly
 C:\Users\Bilal Shahid\Source\Repos\Bilal7168\The-FavCol-Web\UserImages\bin\roslyn\System.IO.Compression.ZipFile.dll
 C:\Users\Bilal Shahid\Source\Repos\Bilal7168\The-FavCol-Web\UserImages\bin\roslyn\System.IO.FileSystem.dll
 C:\Users\Bilal Shahid\Source\Repos\Bilal7168\The-FavCol-Web\UserImages\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\Bilal Shahid\Source\Repos\Bilal7168\The-FavCol-Web\UserImages\bin\roslyn\System.Net.Http.dll
 C:\Users\Bilal Shahid\Source\Repos\Bilal7168\The-FavCol-Web\UserImages\bin\roslyn\System.Net.Sockets.dll
 C:\Users\Bilal Shahid\Source\Repos\Bilal7168\The-FavCol-Web\UserImages\bin\roslyn\System.Reflection.Metadata.dll
 C:\Users\Bilal Shahid\Source\Repos\Bilal7168\The-FavCol-Web\UserImages\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
@@ -122,3 +121,7 @@ C:\Users\Bilal Shahid\Source\Repos\Bilal7168\The-FavCol-Web\UserImages\obj\Debug
 C:\Users\Bilal Shahid\Source\Repos\Bilal7168\The-FavCol-Web\UserImages\obj\Debug\UserImages.csproj.CopyComplete
 C:\Users\Bilal Shahid\Source\Repos\Bilal7168\The-FavCol-Web\UserImages\obj\Debug\UserImages.dll
 C:\Users\Bilal Shahid\Source\Repos\Bilal7168\The-FavCol-Web\UserImages\obj\Debug\UserImages.pdb
+C:\Users\Bilal Shahid\source\repos\Bilal7168\The-FavCol-Web\UserImages\bin\BouncyCastle.Crypto.dll
+C:\Users\Bilal Shahid\source\repos\Bilal7168\The-FavCol-Web\UserImages\bin\GoogleApi.dll
+C:\Users\Bilal Shahid\source\repos\Bilal7168\The-FavCol-Web\UserImages\bin\BouncyCastle.Crypto.xml
+C:\Users\Bilal Shahid\source\repos\Bilal7168\The-FavCol-Web\UserImages\bin\GoogleApi.xml

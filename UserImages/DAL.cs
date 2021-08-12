@@ -159,17 +159,53 @@ namespace UserImages
             SqlCommand soc = new SqlCommand(command, conn);
             SqlDataReader sd = soc.ExecuteReader();
             sd.Read();
-            return sd.GetString(0);
+            String retval = sd.GetString(0);
+            sd.Close();
+            conn.Close();
+            return retval;
+  
+        }
+
+        public string getWord()
+        {
+            conn.Open();
+            string command = "Select Word from Choices where Username = '" + GlobalVar.user + "'";
+            SqlCommand soc = new SqlCommand(command, conn);
+            SqlDataReader sd = soc.ExecuteReader();
+            sd.Read();
+            String retval = sd.GetString(0);
+            sd.Close();
+            conn.Close();
+            return retval;
+        }
+
+        public string getColor()
+        {
+            conn.Open();
+            string command = "Select Color from Choices where Username = '" + GlobalVar.user + "'";
+            SqlCommand soc = new SqlCommand(command, conn);
+            SqlDataReader sd = soc.ExecuteReader();
+            sd.Read();
+            String retval = sd.GetString(0);
+            sd.Close();
+            conn.Close();
+            return retval;
         }
 
         public void ProfileInsertMethod(string color, string word, string emailaddr)
         {
             string command = "Select * from Choices where Username = '" + GlobalVar.user + "'";
+            conn.Open();
             SqlCommand soc = new SqlCommand(command, conn);
             SqlDataReader sd = soc.ExecuteReader();
             if (sd.HasRows)
             {
                 //use the update statements here
+                sd.Close();
+                command = "update Choices set Color = '" + color + "' , Word = '" + word +"' where Username = '" + GlobalVar.user + "'";
+                soc = new SqlCommand(command, conn);
+                soc.ExecuteNonQuery();
+
             }
             else
             {
@@ -177,8 +213,12 @@ namespace UserImages
                 sd.Close();
                 command = "insert into Choices(Username, Color, Word) values('" + GlobalVar.user + "', '" + color + "', '" + word + "')";
                 soc = new SqlCommand(command, conn);
-
+                soc.ExecuteNonQuery();
             }
+            command = "update BioData set Email = '" + emailaddr + "' where Username = '" + GlobalVar.user + "'";
+            soc = new SqlCommand(command, conn);
+            soc.ExecuteNonQuery();
+            conn.Close();
         }
 
     }
