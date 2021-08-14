@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 using System.Net;
 using System.Net.Mail;
 using System.Net.Mime;
+using System.Data;
 
 namespace UserImages
 {
@@ -173,10 +174,19 @@ namespace UserImages
             SqlCommand soc = new SqlCommand(command, conn);
             SqlDataReader sd = soc.ExecuteReader();
             sd.Read();
-            String retval = sd.GetString(0);
-            sd.Close();
-            conn.Close();
-            return retval;
+            if (sd.HasRows)
+            {
+                String retval = sd.GetString(0);
+                sd.Close();
+                conn.Close();
+                return retval;
+            }
+            else
+            {
+                sd.Close();
+                conn.Close();
+                return "";
+            }
         }
 
         public string getColor()
@@ -186,10 +196,19 @@ namespace UserImages
             SqlCommand soc = new SqlCommand(command, conn);
             SqlDataReader sd = soc.ExecuteReader();
             sd.Read();
-            String retval = sd.GetString(0);
-            sd.Close();
-            conn.Close();
-            return retval;
+            if (sd.HasRows)
+            {
+                String retval = sd.GetString(0);
+                sd.Close();
+                conn.Close();
+                return retval;
+            }
+            else
+            {
+                sd.Close();
+                conn.Close();
+                return "";
+            }
         }
 
         public void ProfileInsertMethod(string color, string word, string emailaddr)
@@ -218,6 +237,20 @@ namespace UserImages
             command = "update BioData set Email = '" + emailaddr + "' where Username = '" + GlobalVar.user + "'";
             soc = new SqlCommand(command, conn);
             soc.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public void GridDataView(GridView param)
+        {
+            string str = "Select Username from Login where Username != '" + GlobalVar.user + "'";
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(str, conn);
+            DataTable dt = new DataTable();
+            SqlDataReader reader = cmd.ExecuteReader();
+            dt.Load(reader);
+            DataView dv = dt.DefaultView;
+            param.DataSource = dv;
+            param.DataBind();
             conn.Close();
         }
 

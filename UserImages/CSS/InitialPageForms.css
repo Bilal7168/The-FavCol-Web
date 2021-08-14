@@ -225,3 +225,52 @@ input {
 ::placeholder {
     color: black;
 }
+
+.scrolling{
+    position:absolute;
+}
+
+.gvWidthHeight{
+    overflow:scroll;
+    position:absolute;
+    margin-left:180px;
+    margin-top:20px;
+    height:550px;
+    width:250px;
+}
+
+.gridViewPager{
+    width:330px;
+}
+
+.gridViewPager td {
+    padding: 17px;
+}
+
+    .gridViewPager td:hover {
+        height: 50px;
+        cursor:pointer;
+        color:blue;
+        font-weight:bold;
+    }
+
+
+.GridButton{
+    padding:17px;
+    padding-right:50px;
+}
+    .GridButton:hover {
+        height: 10px;
+        cursor: pointer;
+        color:blue;
+        font-weight: bold;
+    }
+
+.rowG {
+    /* padding-right:70px;
+}*/
+}
+
+.rowG:hover{
+
+}

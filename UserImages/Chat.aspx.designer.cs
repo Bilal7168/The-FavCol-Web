@@ -168,6 +168,15 @@ namespace UserImages
         protected global::System.Web.UI.WebControls.TextBox searchfield;
 
         /// <summary>
+        /// GridView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        public global::System.Web.UI.WebControls.GridView GridView1;
+
+        /// <summary>
         /// horizonline control.
         /// </summary>
         /// <remarks>
@@ -175,6 +184,24 @@ namespace UserImages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label horizonline;
+
+        /// <summary>
+        /// ClkUserName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ClkUserName;
+
+        /// <summary>
+        /// UseIco control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image UseIco;
 
         /// <summary>
         /// searchhorizon control.
