@@ -28,6 +28,37 @@ namespace UserImages
             //{
             //    searchfield_OnKeyPress(ctrlName, args, SaveChar);
             //}
+
+            //LOADING THE CHATS
+
+            int increaser = 15; //increase by 70;
+            string tester = Convert.ToString(increaser);
+
+            for(int i = 0; i < 10; i++)
+            {
+                Label chatTest = new Label();
+                chatTest.Text = "Okay xD";
+                chatTest.CssClass = "chatSender";
+                Label SendTime = new Label();
+                SendTime.Text = "21:11";
+                SendTime.CssClass = "TimeSend";
+                Label chatTest2 = new Label();
+                chatTest2.Text = "We always were on the right path, but things led to mismanagement and they led to chaos, thus to stay on the right" +
+                    "path there always had to be sacrifices or else we would have lost😁😂😂";
+                chatTest2.CssClass = "chatReceiver";
+                Label RecTime = new Label();
+                RecTime.Text = "20:12";
+                RecTime.CssClass = "TimeReceive";
+                messageCorner.Controls.Add(chatTest);
+                messageCorner.Controls.Add(SendTime);
+                messageCorner.Controls.Add(chatTest2);
+                messageCorner.Controls.Add(RecTime);
+            }
+
+            //..
+
+
+
         }
 
         public void RaisePostBackEvent(string eventArgument) 

@@ -18,7 +18,81 @@
         button:hover{
             cursor:pointer;
         }
+
+                .chatSender {
+            display: inline-block;
+            margin-top: 17px;
+            background-color:#75ff4d;
+            float: right;
+            border: 2px solid black;
+            border-radius:20px;
+            border-width:2.5px;
+            margin-right:10px;
+            padding-top:10px;
+            padding-left:10px;
+            padding-right:10px;
+            padding-bottom:10px;
+            font-size:16px;
+            text-wrap:normal;
+            color:#030202;
+            font-family:'Palatino Linotype';
+            text-align:left;
+            width: 380px;
+        }
+
+        .chatReceiver {
+            display: inline-block;
+            margin-top: 17px;
+            background-color: white;
+            float: left;
+            border: 2px solid black;
+            border-radius:20px;
+            border-width:2.5px;
+            margin-left:10px;
+            padding-top:10px;
+            padding-left:10px;
+            padding-right:10px;
+            padding-bottom:10px;
+            text-wrap:normal;
+            font-size:16px;
+            color:#030202;
+            font-family:'Palatino Linotype';
+            text-align:left;
+            width: 380px;
+        }
+
+        .TimeSend{
+            display:inline-block;
+            background:none;
+            color:#110e0e;
+            float:right;
+            font-size:15px;
+            font-weight:bold;
+            margin-top:-24px;
+            margin-bottom:12px;
+            text-align:right;
+            width:380px;
+            margin-left:12px;
+            margin-right:17px;
+            border:none;
+        }
+
+        .TimeReceive{
+            display:inline-block;
+            background:none;
+            color:black;
+            float:right;
+            margin-top:-24px;
+            margin-bottom:12px;
+            font-size:15px;
+            text-align:left;
+            width:380px;
+            font-weight:bold;
+            margin-left:12px;
+            border:none;
+        }
     </style>
+
   
 
 </head>
@@ -63,7 +137,7 @@
               <asp:Label ID="ClkUserName" runat="server" Text="userdef" style="position:absolute; margin-top:-10px; margin-left:80px; font-family:'Palatino Linotype'; font-weight:bold; font-size:20px; color:#0000ff "></asp:Label>
             <asp:Image ID="UseIco" runat="server" Text="userdef" ImageUrl="~/Content/images/person-circle.svg" style="position:absolute; margin-top:-10px; margin-left:30px; width:40px; height:40px; "></asp:Image>
             <asp:Label ID="searchhorizon" class="form-control" runat="server" Text="" style="position:absolute; background-color:#d9d9d9; margin-left:13px; margin-top:543px; border-top-left-radius:21px; border-top-right-radius:21px; height:2px; width:768px; padding:60px 0px 0px 0px;" CssClass="label"></asp:Label> 
-                <asp:TextBox ID="msg" runat="server" on  style="position:absolute; margin-top:555px; margin-left:50px; height:35px; width:600px; border-radius:10px; background-color:white; padding-right:40px;"></asp:TextBox>
+                <asp:TextBox ID="msg" runat="server" style="position:absolute; margin-top:555px; margin-left:50px; height:35px; width:600px; border-radius:10px; background-color:white; padding-right:40px;"></asp:TextBox>
                 <asp:Label id="emojibutton" runat="server" Text="😃" style="position:absolute; margin-top:565px; margin-left:670px;"></asp:Label>
 
                 <script>
@@ -135,6 +209,11 @@
 
                     });
                 </script>
+
+                        <asp:Panel ID="messageCorner" runat="server" style="position:absolute;margin-left:433px; margin-top:10px; background-image:linear-gradient(to right, #419df5, #b73e3e) ; overflow-y:scroll;"  Width="768" Height="500">
+                <%--<asp:Label runat="server" Text="just kidding" style="display:inline-block; background-color:white; margin-top:15px;float:right; border:2px solid black; width:300px; height:50px;" ></asp:Label>
+            <asp:Label runat="server" Text="Paran mar!" style="display:inline-block; background-color:white; margin-top:55px;float:left; border:2px solid black; width:300px; height:50px;" ></asp:Label>--%>
+                        </asp:Panel>
             <button runat="server" id="btnRun" style="position:absolute; margin-top:560px; margin-left:715px; border:none; background:none;">
                 <i class="bi-arrow-right-circle-fill" style="font-size:27px;"></i>
             </button>
