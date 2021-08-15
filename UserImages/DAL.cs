@@ -123,9 +123,9 @@ namespace UserImages
             SqlCommand soc = new SqlCommand(command, conn);
             SqlDataReader extractor = soc.ExecuteReader();
             extractor.Read();
-            if(extractor.GetInt32(0) == key)
+            if (extractor.GetInt32(0) == key)
             {
-                command  = "delete from PasswordRes where Username = '" + GlobalVar.ForgotPassUser + "'";
+                command = "delete from PasswordRes where Username = '" + GlobalVar.ForgotPassUser + "'";
                 soc = new SqlCommand(command, conn);
                 extractor.Close();
                 soc.ExecuteNonQuery();
@@ -155,7 +155,7 @@ namespace UserImages
 
         public string getEmail()
         {
-            string command = "Select Email from BioData where Username = '" + GlobalVar.user +"'";
+            string command = "Select Email from BioData where Username = '" + GlobalVar.user + "'";
             conn.Open();
             SqlCommand soc = new SqlCommand(command, conn);
             SqlDataReader sd = soc.ExecuteReader();
@@ -164,7 +164,7 @@ namespace UserImages
             sd.Close();
             conn.Close();
             return retval;
-  
+
         }
 
         public string getWord()
@@ -221,7 +221,7 @@ namespace UserImages
             {
                 //use the update statements here
                 sd.Close();
-                command = "update Choices set Color = '" + color + "' , Word = '" + word +"' where Username = '" + GlobalVar.user + "'";
+                command = "update Choices set Color = '" + color + "' , Word = '" + word + "' where Username = '" + GlobalVar.user + "'";
                 soc = new SqlCommand(command, conn);
                 soc.ExecuteNonQuery();
 
@@ -254,5 +254,53 @@ namespace UserImages
             conn.Close();
         }
 
+        public void loggingMessages(string message, string ToUser)
+        {
+            //inserting into the SQL Server
+            string newM = message.Replace("'", "''");
+            string str = "Insert into Chats values('" + GlobalVar.user + "', '" + ToUser + "', N'" + newM + "', '" + DateTime.Now + "')";
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(str, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public void populatePanel(Panel param, string ToUser)
+        {
+            string str = "select * from Chats where FromUser = '" + GlobalVar.user +"' and ToUser = '" + ToUser +"' OR FromUser='" + ToUser+"' and ToUser = '" + GlobalVar.user +"'order by Time asc";
+            conn.Open();
+            SqlCommand soc = new SqlCommand(str, conn);
+            SqlDataReader sd = soc.ExecuteReader();
+            if (sd.HasRows)
+            {
+                while (sd.Read())
+                {
+                    if(sd[0].ToString() == GlobalVar.user) //if FromUser is me
+                    {
+                        Label chatTest = new Label();
+                        chatTest.Text = sd[2].ToString();
+                        chatTest.CssClass = "chatSender";
+                        Label SendTime = new Label();
+                        SendTime.Text = sd[3].ToString();
+                        SendTime.CssClass = "TimeSend";
+                        param.Controls.Add(chatTest);
+                        param.Controls.Add(SendTime);
+                    }
+                    else if(sd[0].ToString() == ToUser)
+                    {
+
+                        Label chatTest2 = new Label();
+                        chatTest2.Text = sd[2].ToString();
+                        chatTest2.CssClass = "chatReceiver";
+                        Label RecTime = new Label();
+                        RecTime.Text = sd[3].ToString();
+                        RecTime.CssClass = "TimeReceive";
+                        param.Controls.Add(chatTest2);
+                        param.Controls.Add(RecTime);
+                    }
+
+                }
+            }
+        }
     }
 }

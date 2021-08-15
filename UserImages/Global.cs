@@ -11,6 +11,7 @@ namespace UserImages
         public static string user = "";
         public static string ForgotPassUser = "";
         public static bool allowUse = true;
+        public static bool FirstChatOpen = true;
 
     }
 }

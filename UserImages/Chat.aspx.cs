@@ -17,8 +17,12 @@ namespace UserImages
             GlobalVar.allowUse = true;
             DAL x = new DAL();
             x.GridDataView(GridView1);
-            LinkButton x2= (LinkButton)(GridView1.Rows[0].Cells[2].Controls[0]);
-            ClkUserName.Text = x2.Text;
+            if (GlobalVar.FirstChatOpen)
+            {
+                LinkButton x2 = (LinkButton)(GridView1.Rows[0].Cells[2].Controls[0]);
+                ClkUserName.Text = x2.Text;
+                GlobalVar.FirstChatOpen = false;
+            }
 
             //var ctrlName = Request.Params[Page.postEventSourceID];
             //var args = Request.Params[Page.postEventArgumentID];
@@ -30,35 +34,9 @@ namespace UserImages
             //}
 
             //LOADING THE CHATS
-
-            int increaser = 15; //increase by 70;
-            string tester = Convert.ToString(increaser);
-
-            for(int i = 0; i < 10; i++)
-            {
-                Label chatTest = new Label();
-                chatTest.Text = "Okay xD";
-                chatTest.CssClass = "chatSender";
-                Label SendTime = new Label();
-                SendTime.Text = "21:11";
-                SendTime.CssClass = "TimeSend";
-                Label chatTest2 = new Label();
-                chatTest2.Text = "We always were on the right path, but things led to mismanagement and they led to chaos, thus to stay on the right" +
-                    "path there always had to be sacrifices or else we would have lost😁😂😂";
-                chatTest2.CssClass = "chatReceiver";
-                Label RecTime = new Label();
-                RecTime.Text = "20:12";
-                RecTime.CssClass = "TimeReceive";
-                messageCorner.Controls.Add(chatTest);
-                messageCorner.Controls.Add(SendTime);
-                messageCorner.Controls.Add(chatTest2);
-                messageCorner.Controls.Add(RecTime);
-            }
-
+            x.populatePanel(messageCorner, ClkUserName.Text);
             //..
-
-
-
+            ScriptManager.RegisterStartupScript(this.Page, typeof(Panel), "PanelChatContent", "scrollPanel();", true);
         }
 
         public void RaisePostBackEvent(string eventArgument) 
@@ -72,16 +50,19 @@ namespace UserImages
 
         protected void message_Click(object sender, EventArgs e)
         {
+            GlobalVar.FirstChatOpen = true;
             Response.Redirect("Chat.aspx");
         }
 
         protected void Images_Click(object sender, EventArgs e)
         {
+            GlobalVar.FirstChatOpen = true;
             Response.Redirect("Images.aspx");
         }
 
         protected void profile_Click(object sender, EventArgs e)
         {
+            GlobalVar.FirstChatOpen = true;
             Response.Redirect("Dashboard.aspx");
         }
 
@@ -105,6 +86,9 @@ namespace UserImages
         {
             LinkButton x = (LinkButton)(GridView1.SelectedRow.Cells[2].Controls[0]);
             ClkUserName.Text = x.Text;
+            messageCorner.Controls.Clear();
+            DAL x2 = new DAL();
+            x2.populatePanel(messageCorner, x.Text);
         }
 
         protected void searchfield_TextChanged(object sender, EventArgs e)
@@ -114,7 +98,6 @@ namespace UserImages
 
         private void searchfield_GotFocus(Object sender, EventArgs e)
         {
-         ClkUserName.Text = "mine";
         }
 
         private void searchfield_OnKeyPress(string ctrlName, string args, string prevChar)
@@ -122,9 +105,28 @@ namespace UserImages
             //your code goes here
         }
 
+
+
         protected void searchfield_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnRun_Click(object sender, EventArgs e) //the insert message button
+        {
+            //insert into SQL
+            DAL x = new DAL();
+            x.loggingMessages(msg.Text, ClkUserName.Text);
+
+            //making the send bubble
+            Label chatTest = new Label();
+            chatTest.Text = msg.Text;
+            chatTest.CssClass = "chatSender";
+            Label SendTime = new Label();
+            SendTime.Text = DateTime.Now.ToString();
+            SendTime.CssClass = "TimeSend";
+            messageCorner.Controls.Add(chatTest);
+            messageCorner.Controls.Add(SendTime);
         }
     }
 }

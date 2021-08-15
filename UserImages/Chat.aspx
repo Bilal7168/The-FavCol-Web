@@ -31,7 +31,7 @@
             padding-top:10px;
             padding-left:10px;
             padding-right:10px;
-            padding-bottom:10px;
+            padding-bottom:14px;
             font-size:16px;
             text-wrap:normal;
             color:#030202;
@@ -52,7 +52,7 @@
             padding-top:10px;
             padding-left:10px;
             padding-right:10px;
-            padding-bottom:10px;
+            padding-bottom:14px;
             text-wrap:normal;
             font-size:16px;
             color:#030202;
@@ -64,32 +64,43 @@
         .TimeSend{
             display:inline-block;
             background:none;
-            color:#110e0e;
+            color:#4f3939;
             float:right;
-            font-size:15px;
+            font-size:12px;
             font-weight:bold;
-            margin-top:-24px;
+            padding-top:5px;
+            margin-top:-22px;
             margin-bottom:12px;
             text-align:right;
             width:380px;
             margin-left:12px;
-            margin-right:17px;
+            padding-bottom:6px;
+            margin-right:21px;
             border:none;
         }
 
         .TimeReceive{
             display:inline-block;
             background:none;
-            color:black;
-            float:right;
-            margin-top:-24px;
+             color:#4f3939;
+            float:left;
+            padding-top:10.7px;
+            margin-top:-26px;
             margin-bottom:12px;
-            font-size:15px;
+            font-size:12px;
             text-align:left;
+            padding-bottom:12px;
             width:380px;
             font-weight:bold;
-            margin-left:12px;
+            margin-left:290px;
             border:none;
+        }
+
+        .buttonforSend{
+
+        }
+        .buttonforSend:hover{
+            cursor:pointer;
         }
     </style>
 
@@ -210,13 +221,26 @@
                     });
                 </script>
 
-                        <asp:Panel ID="messageCorner" runat="server" style="position:absolute;margin-left:433px; margin-top:10px; background-image:linear-gradient(to right, #419df5, #b73e3e) ; overflow-y:scroll;"  Width="768" Height="500">
+                        <asp:Panel ID="messageCorner" runat="server"  style="position:absolute;margin-left:433px; margin-top:10px; background-image:linear-gradient(to right, #419df5, #b73e3e) ; overflow-y:scroll;"  Width="768" Height="500">
                 <%--<asp:Label runat="server" Text="just kidding" style="display:inline-block; background-color:white; margin-top:15px;float:right; border:2px solid black; width:300px; height:50px;" ></asp:Label>
             <asp:Label runat="server" Text="Paran mar!" style="display:inline-block; background-color:white; margin-top:55px;float:left; border:2px solid black; width:300px; height:50px;" ></asp:Label>--%>
                         </asp:Panel>
-            <button runat="server" id="btnRun" style="position:absolute; margin-top:560px; margin-left:715px; border:none; background:none;">
-                <i class="bi-arrow-right-circle-fill" style="font-size:27px;"></i>
-            </button>
+            <div style="position:absolute; margin-left:1110px; margin-top:525px; width:50px; height:30px;">
+                <span class="bi-arrow-right-circle-fill" style="position:absolute; font-size:30px;"></span>
+                <input id ="saverforUser" type="hidden" />
+                        <asp:Button runat="server" ID="btnRun" style="position:absolute; background:none; width:40px; border:none;" CssClass="buttonforSend" OnClick="btnRun_Click" />
+                
+            </div>
+
+            <script>
+                function scrollPanel() {
+                    var panel = document.getElementById("messageCorner");
+                    panel.scrollTop = panel.scrollHeight;
+                }
+
+            </script>
+
+            
             </div>
     </form>
 </body>
