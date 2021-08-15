@@ -122,6 +122,14 @@ C:\Users\Bilal Shahid\Source\Repos\Bilal7168\The-FavCol-Web\UserImages\obj\Debug
 C:\Users\Bilal Shahid\Source\Repos\Bilal7168\The-FavCol-Web\UserImages\obj\Debug\UserImages.dll
 C:\Users\Bilal Shahid\Source\Repos\Bilal7168\The-FavCol-Web\UserImages\obj\Debug\UserImages.pdb
 C:\Users\Bilal Shahid\source\repos\Bilal7168\The-FavCol-Web\UserImages\bin\BouncyCastle.Crypto.dll
-C:\Users\Bilal Shahid\source\repos\Bilal7168\The-FavCol-Web\UserImages\bin\GoogleApi.dll
 C:\Users\Bilal Shahid\source\repos\Bilal7168\The-FavCol-Web\UserImages\bin\BouncyCastle.Crypto.xml
-C:\Users\Bilal Shahid\source\repos\Bilal7168\The-FavCol-Web\UserImages\bin\GoogleApi.xml
+C:\Users\Bilal Shahid\source\repos\Bilal7168\The-FavCol-Web\UserImages\bin\Google.Apis.Core.dll
+C:\Users\Bilal Shahid\source\repos\Bilal7168\The-FavCol-Web\UserImages\bin\Google.Apis.Customsearch.v1.dll
+C:\Users\Bilal Shahid\source\repos\Bilal7168\The-FavCol-Web\UserImages\bin\Google.Apis.dll
+C:\Users\Bilal Shahid\source\repos\Bilal7168\The-FavCol-Web\UserImages\bin\Google.Apis.PlatformServices.dll
+C:\Users\Bilal Shahid\source\repos\Bilal7168\The-FavCol-Web\UserImages\bin\Google.Apis.pdb
+C:\Users\Bilal Shahid\source\repos\Bilal7168\The-FavCol-Web\UserImages\bin\Google.Apis.xml
+C:\Users\Bilal Shahid\source\repos\Bilal7168\The-FavCol-Web\UserImages\bin\Google.Apis.Core.pdb
+C:\Users\Bilal Shahid\source\repos\Bilal7168\The-FavCol-Web\UserImages\bin\Google.Apis.Core.xml
+C:\Users\Bilal Shahid\source\repos\Bilal7168\The-FavCol-Web\UserImages\bin\Google.Apis.Customsearch.v1.pdb
+C:\Users\Bilal Shahid\source\repos\Bilal7168\The-FavCol-Web\UserImages\bin\Google.Apis.Customsearch.v1.xml

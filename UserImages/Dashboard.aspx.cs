@@ -20,6 +20,7 @@ namespace UserImages
                 mail.Text = x.getEmail();
                 favwordy.Text = x.getWord();
                 cp2.Text = x.getColor();
+                GlobalVar.makeSearchString(cp2.Text, favwordy.Text);
                 GlobalVar.allowUse = false;
             }
 

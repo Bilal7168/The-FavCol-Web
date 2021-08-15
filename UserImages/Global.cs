@@ -12,6 +12,11 @@ namespace UserImages
         public static string ForgotPassUser = "";
         public static bool allowUse = true;
         public static bool FirstChatOpen = true;
+        public static string SearchString = "";
+        public static void makeSearchString(string color, string word)
+        {
+            SearchString = color + "" + word;
+        }
 
     }
 }

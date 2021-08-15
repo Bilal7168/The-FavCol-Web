@@ -156,7 +156,7 @@ namespace UserImages
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox cp2;
+        public global::System.Web.UI.WebControls.TextBox cp2;
 
         /// <summary>
         /// colorchoose control.
@@ -174,7 +174,7 @@ namespace UserImages
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox favwordy;
+        public global::System.Web.UI.WebControls.TextBox favwordy;
 
         /// <summary>
         /// favword control.
@@ -192,7 +192,7 @@ namespace UserImages
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox mail;
+        public global::System.Web.UI.WebControls.TextBox mail;
 
         /// <summary>
         /// emailaddrmodif control.

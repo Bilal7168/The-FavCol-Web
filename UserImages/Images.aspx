@@ -53,17 +53,15 @@
             <div class="card" style="width: 300px; margin-left:400px; margin-top:90px; border-left-width:10px; border-right-width:0px">
             <img src="Content/img/Scenic1.jpg" class="card-img-top" alt="..." />
             <div class="card-body text-center">
-                <h5 class="card-title">Alice Liddel</h5>
-                <p class="card-text">Alice is a freelance web designer and developer based in London. She is specialized in HTML5, CSS3, JavaScript, Bootstrap, etc.</p>
-                <a href="#" class="btn btn-primary">View Profile</a>
+                <h5 class="card-title">Mountains of The East</h5>
+                <p class="card-text">A scenic view from Random Src.</p>
             </div>
             </div>
-            <div class="card" style="position:absolute; width: 300px; margin-left:720px; margin-top:-426px; border-left-width:0px; border-right-width:10px;">
-            <img src="Content/img/Scenic1.jpg" class="card-img-top" alt="..." />
+            <div class="card" style="position:absolute; width: 300px; margin-left:720px; margin-top:-300px; border-left-width:0px; border-right-width:10px;">
+            <img src="Content/img/EastTehachapiCrest.jpg" class="card-img-top" alt="..." />
             <div class="card-body text-center">
-                <h5 class="card-title">Jenny Liddel</h5>
-                <p class="card-text">Jenny is a freelance web designer and developer based in London. She is specialized in HTML5, CSS3, JavaScript, Bootstrap, etc.</p>
-                <a href="#" class="btn btn-primary">View Profile</a>
+                <h5 class="card-title">The East TehaChapi Crest</h5>
+                <p class="card-text">Mountains from the United States.</p>
             </div>
             </div>
             </div>
